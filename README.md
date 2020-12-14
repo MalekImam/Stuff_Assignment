@@ -35,8 +35,8 @@ Meetings --> Users
 
 ## Required Packages
 
-> - React Navigation: used to create the navigation structure for the application, for installation <br/> `yarn add @react-navigation/native` <br/> > `yarn add @react-navigation/stack`
+> - React Navigation: used to create the navigation structure for the application, for installation <br/> > `yarn add @react-navigation/native` <br/> > `yarn add @react-navigation/stack` <br/> > `yarn add react-native-reanimated` <br/> > `yarn add react-native-screens` <br/> > `yarn add @react-native-community/masked-view` <br/> > `yarn add react-native-safe-area-context`
 > - Redux: helps us with sharing the states between components and store global state for the application, for installation <br/> > `yarn add redux` -- Redux Core <br/> > `yarn add react-redux`
-> - React Native Paper Ui: which is a **UI** component library, for installation <br/> > `yarn add react-native-paper`<br/> > `yarn add react-native-vector-icons`<br/> > `react-native link react-native-vector-icons`
-> - Prop Types: used to document the intended types of properties passed to components, for installation <br/> `yarn add prop-types`
-> - Alias links: used to give links an alias for better usage and to be more readable for users, for installation <br/> `yarn add babel-plugin-module-resolver`
+> - React Native Paper Ui: which is a **UI** component library, for installation <br/> > `yarn add react-native-paper`<br/> > `yarn add react-native-vector-icons`<br/> `react-native link react-native-vector-icons`
+> - Prop Types: used to document the intended types of properties passed to components, for installation <br/> > `yarn add prop-types`
+> - Alias links: used to give links an alias for better usage and to be more readable for users, for installation <br/> > `yarn add babel-plugin-module-resolver`
