@@ -9,6 +9,9 @@ import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
 import configureStore from 'core/redux/store';
 
+// Import modules routes
+import 'modules/Login/routes';
+
 const store = configureStore();
 
 const Main = () => {
