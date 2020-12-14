@@ -1,21 +1,26 @@
 // Dependencies
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, {useReducer} from 'react';
 import {Text, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
+// Core Files
+import loginReducer, {
+  initialLoginState,
+} from 'modules/Login/helpers/reducers/loginReducer';
+import {dismissKeyboard} from 'core/helpers/KeyboardFunctioalities';
+import {validateLoginInput} from 'modules/Login/helpers/validation';
+import {setEmail, setPassword} from 'modules/Login/helpers/actions/login';
 // Shared Components
 import loginStyles from 'modules/Login/styles';
 import Avatar from 'shared/components/Avatars';
 import Input from 'shared/components/Input/index';
 
 function Login({navigation}) {
+  const [loginState, dispatch] = useReducer(loginReducer, initialLoginState);
+
   // Remove navigation header from the screen
   React.useLayoutEffect(() => {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
-
-  const dismissKeyboard = () => {
-    Keyboard.dismiss();
-  };
 
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
@@ -34,8 +39,18 @@ function Login({navigation}) {
             </Text>
           </View>
           <View style={loginStyles.inputsContainer}>
-            <Input label="Email" />
-            <Input label="Email" />
+            <Input
+              label="Email"
+              value={loginState.email}
+              onBlur={() => validateLoginInput('email')}
+              onChangeText={(text) => dispatch(setEmail(text))}
+            />
+            <Input
+              label="Password"
+              value={loginState.password}
+              onBlur={() => validateLoginInput('password')}
+              onChangeText={(text) => dispatch(setPassword(text))}
+            />
           </View>
         </View>
       </View>

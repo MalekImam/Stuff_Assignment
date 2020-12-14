@@ -15,6 +15,7 @@ const defaultEmailStyles = StyleSheet.create({
 
 Input.propTypes = {
   styles: PropTypes.object,
+  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 };
 
