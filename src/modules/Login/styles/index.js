@@ -1,4 +1,5 @@
-const {StyleSheet} = require('react-native');
+// Dependencies
+import {StyleSheet} from 'react-native';
 
 const loginStyles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ const loginStyles = StyleSheet.create({
   title: {fontSize: 25},
   titleContainer: {marginVertical: 40},
   box: {alignItems: 'center', justifyContent: 'center'},
-  inputsContainer: {alignSelf: 'stretch', paddingVertical: 80},
+  inputsContainer: {alignSelf: 'stretch', paddingVertical: 30},
 });
 
 export default loginStyles;
