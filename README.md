@@ -40,3 +40,4 @@ Meetings --> Users
 > - React Native Paper Ui: which is a **UI** component library, for installation <br/> > `yarn add react-native-paper`<br/> > `yarn add react-native-vector-icons`<br/> `react-native link react-native-vector-icons`
 > - Prop Types: used to document the intended types of properties passed to components, for installation <br/> > `yarn add prop-types`
 > - Alias links: used to give links an alias for better usage and to be more readable for users, for installation <br/> > `yarn add babel-plugin-module-resolver`
+> - Reinforcements package: used for dealing with objects, also it gives you some methods like **merge, get**, for installation <br/> >`yarn add reinforcements`

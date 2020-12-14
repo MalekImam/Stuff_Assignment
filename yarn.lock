@@ -747,6 +747,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@flk/supportive-is@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@flk/supportive-is/-/supportive-is-0.2.3.tgz#8372698db9d0dd2a2d21d8c35f0dce16781a9f53"
+  integrity sha512-vGLexJBritJGj060PUWVuUcMfUdUxv+05LemoM4kcK849MhsNluB6LYbCiDwJXkOApZA3rky7iWDi9wHzk/mew==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -6072,6 +6077,14 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
+reinforcements@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/reinforcements/-/reinforcements-1.1.14.tgz#32b023eb16e46e45cf97f309b9422c829ccbefae"
+  integrity sha512-EMZ77HorsEFuj3/UWT0X5j7odfzdnXp3xVDIuLLtTTh1WqoCHz/CSjZBHr+RL9qbBQzr1b7o84iU1OMazloifA==
+  dependencies:
+    "@flk/supportive-is" "^0.2.3"
+    ts-contracts "^1.0.9"
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -6956,6 +6969,11 @@ tr46@^2.0.2:
   integrity sha512-3n1qG+/5kg+jrbTzwAykB5yRYtQCTqOGKq5U5PE3b0a1/mzo6snDhjGS0zJVJunO0NrT3Dg1MLy5TjWP/UJppg==
   dependencies:
     punycode "^2.1.1"
+
+ts-contracts@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/ts-contracts/-/ts-contracts-1.0.9.tgz#05db9f27901f45b0fe9d54bf39aa4cb25f990dfb"
+  integrity sha512-+b4VzKPHn02yk8zhd4+OD5rnpE+6OSWT4zbI9b8rnJaezoMpjpJOvQKI+7CZDmbM3gy175LWOxmk9wIMCOYTJA==
 
 tslib@^1.8.1:
   version "1.14.1"
