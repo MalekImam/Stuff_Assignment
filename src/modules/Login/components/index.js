@@ -6,13 +6,13 @@ import {Text, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import loginReducer, {
   initialLoginState,
 } from 'modules/Login/helpers/reducers/loginReducer';
+import ComponentControl from 'core/components/ComponentsControl';
 import {dismissKeyboard} from 'core/helpers/KeyboardFunctioalities';
-import {validateLoginInput} from 'modules/Login/helpers/validation';
+import {validateLoginInput} from 'modules/Login/helpers/loginValidation';
 import {setEmail, setPassword} from 'modules/Login/helpers/actions/login';
 // Shared Components
 import loginStyles from 'modules/Login/styles';
 import Avatar from 'shared/components/Avatars';
-import Input from 'shared/components/Input/index';
 
 function Login({navigation}) {
   const [loginState, dispatch] = useReducer(loginReducer, initialLoginState);
@@ -22,6 +22,7 @@ function Login({navigation}) {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
 
+  console.log(loginState);
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={loginStyles.container}>
@@ -39,17 +40,25 @@ function Login({navigation}) {
             </Text>
           </View>
           <View style={loginStyles.inputsContainer}>
-            <Input
+            <ComponentControl
               label="Email"
+              control="email"
               value={loginState.email}
-              onBlur={() => validateLoginInput('email')}
+              error={!loginState.isValid_email}
               onChangeText={(text) => dispatch(setEmail(text))}
+              onBlur={() =>
+                validateLoginInput('email', dispatch, loginState.email)
+              }
             />
-            <Input
+            <ComponentControl
               label="Password"
+              control="password"
               value={loginState.password}
-              onBlur={() => validateLoginInput('password')}
+              error={!loginState.isValid_password}
               onChangeText={(text) => dispatch(setPassword(text))}
+              onBlur={() =>
+                validateLoginInput('password', dispatch, loginState.password)
+              }
             />
           </View>
         </View>

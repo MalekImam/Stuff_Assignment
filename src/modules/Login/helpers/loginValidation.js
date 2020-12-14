@@ -7,15 +7,15 @@ const validationLoginSchema = {
   email: ['required', 'email'],
 };
 
-export const validateLoginInput = (target, dispatch) => {
+export const validateLoginInput = (target, dispatch, data) => {
   let validationFlag = true;
   validationLoginSchema[target].forEach((V_Type) => {
-    if (!isValid(V_Type, data[target])) {
+    if (!isValid(V_Type, data)) {
       validationFlag = false;
       dispatch(updateLoginValidation({[`isValid_${target}`]: false}));
     }
   });
   if (validationFlag) {
-    dispatch({[`isValid_${target}`]: true});
+    dispatch(updateLoginValidation({[`isValid_${target}`]: true}));
   }
 };
