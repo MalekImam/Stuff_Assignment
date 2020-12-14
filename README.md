@@ -12,6 +12,27 @@
 
 > **Shared** folder is the container of everything that can be accessible from the main components, by this way we can create generic components and used them in any main component so it will be easy to use, maintain and debug.
 
+## Class Diagram
+
+```plantuml
+left to right direction
+
+class Users{
+    -integer id
+    -string email
+    -string password
+    -string c_password
+}
+
+class Meetings{
+    -integer id
+    -integer user_id
+    -string appointment
+}
+
+Meetings --> Users
+```
+
 ## Required Packages
 
 > - React Navigation: used to create the navigation structure for the application, for installation <br/> `yarn add @react-navigation/native` <br/> > `yarn add @react-navigation/stack`
