@@ -14,11 +14,16 @@ function Login({navigation}) {
 
   return (
     <View style={loginStyles.container}>
-      <Avatar
-        size={130}
-        type="image"
-        source={require('shared/assets/stuff_logo.png')}
-      />
+      <View>
+        <Avatar
+          size={130}
+          type="image"
+          source={require('shared/assets/stuff_logo.png')}
+        />
+      </View>
+      <View style={loginStyles.titleContainer}>
+        <Text style={loginStyles.title}>Your email address and password?</Text>
+      </View>
     </View>
   );
 }

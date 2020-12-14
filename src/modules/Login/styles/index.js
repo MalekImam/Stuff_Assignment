@@ -7,6 +7,8 @@ const loginStyles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
+  title: {fontSize: 25},
+  titleContainer: {marginVertical: 40},
 });
 
 export default loginStyles;
