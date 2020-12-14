@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
+import Avatar from 'shared/components/Avatars';
 
 function Login({navigation}) {
   // Remove navigation header from the screen
@@ -11,7 +12,11 @@ function Login({navigation}) {
 
   return (
     <View>
-      <Text>Login Page</Text>
+      <Avatar
+        size={130}
+        type="image"
+        source={require('shared/assets/stuff_logo.png')}
+      />
     </View>
   );
 }
