@@ -1,11 +1,12 @@
 // Dependencies
 import PropTypes from 'prop-types';
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import {Text, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
 // Core Files
 import loginReducer, {
   initialLoginState,
 } from 'modules/Login/helpers/reducers/loginReducer';
+import onSubmit from 'modules/Login/helpers/loginSubmit';
 import ComponentControl from 'core/components/ComponentsControl';
 import {dismissKeyboard} from 'core/helpers/KeyboardFunctioalities';
 import {validateLoginInput} from 'modules/Login/helpers/loginValidation';
