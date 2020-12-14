@@ -14,6 +14,7 @@ import {setEmail, setPassword} from 'modules/Login/helpers/actions/login';
 // Shared Components
 import loginStyles from 'modules/Login/styles';
 import Avatar from 'shared/components/Avatars';
+import ButtonWithIcon from 'shared/components/Buttons/ButtonWithIcon';
 
 function Login({navigation}) {
   const [loginState, dispatch] = useReducer(loginReducer, initialLoginState);
@@ -61,6 +62,7 @@ function Login({navigation}) {
                 validateLoginInput('password', dispatch, loginState.password)
               }
             />
+            <ButtonWithIcon label="Next" onPress={() => onSubmit()} />
           </View>
         </View>
       </View>
