@@ -1,7 +1,7 @@
 // Dependencies
 import PropTypes from 'prop-types';
 import React, {useReducer, useState} from 'react';
-import {Text, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {Text, View, TouchableWithoutFeedback} from 'react-native';
 // Core Files
 import loginReducer, {
   initialLoginState,
@@ -24,7 +24,6 @@ function Login({navigation}) {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
 
-  console.log(loginState);
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={loginStyles.container}>
