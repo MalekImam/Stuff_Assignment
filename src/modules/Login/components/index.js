@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
+// Shared Components
+import loginStyles from 'modules/Login/styles';
 import Avatar from 'shared/components/Avatars';
 
 function Login({navigation}) {
@@ -11,7 +13,7 @@ function Login({navigation}) {
   }, [navigation]);
 
   return (
-    <View>
+    <View style={loginStyles.container}>
       <Avatar
         size={130}
         type="image"
