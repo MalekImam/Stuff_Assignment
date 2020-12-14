@@ -9,6 +9,8 @@ const loginStyles = StyleSheet.create({
   },
   title: {fontSize: 25},
   titleContainer: {marginVertical: 40},
+  box: {alignItems: 'center', justifyContent: 'center'},
+  inputsContainer: {alignSelf: 'stretch', paddingVertical: 80},
 });
 
 export default loginStyles;
