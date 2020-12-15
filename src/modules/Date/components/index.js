@@ -1,22 +1,22 @@
 // Dependencies
+import React from 'react';
 import moment from 'moment';
 import {View} from 'react-native';
 import PropTypes from 'prop-types';
 import Dates from 'react-native-dates';
-import React, {useReducer} from 'react';
+import {useDispatch} from 'react-redux';
 // Core Files
-import dateReducer, {
-  initialDateState,
-} from 'modules/Date/helpers/reducers/dateReducer';
-import {setDate, setDates} from 'modules/Date/helpers/actions/date';
+import getMomentState from 'core/redux/helpers/getMomentState';
+import {setMoment, setMoments} from 'core/redux/actions/moment';
+import MomentTypeButton from 'core/components/MomentTypeButton';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import dateStyles from 'modules/Date/styles';
-import DateTypeButton from 'modules/Date/components/DateTypeButton';
 
 function Date({navigation}) {
+  const dispatch = useDispatch();
   const navBarTitle = {name: 'Custom date', styles: {color: 'black'}};
-  const [dateState, dispatch] = useReducer(dateReducer, initialDateState);
+  const [focus, _moment, isRange, endMoment, startMoment] = getMomentState();
 
   // Remove navigation header from the screen
   React.useLayoutEffect(() => {
@@ -26,12 +26,12 @@ function Date({navigation}) {
   const isDateBlocked = (date) => date.isBefore(moment(), 'day');
 
   const onDateChange = (props) => {
-    if (dateState.isRange) {
+    if (isRange) {
       const {startDate, endDate, focusedInput} = props;
-      dispatch(setDates(startDate, endDate, focusedInput));
+      dispatch(setMoments(startDate, endDate, focusedInput));
     } else {
       const {date} = props;
-      dispatch(setDate(date));
+      dispatch(setMoment(date));
     }
   };
 
@@ -40,25 +40,19 @@ function Date({navigation}) {
       <NavBar backBtn navBarTitle={navBarTitle} />
       <View style={dateStyles.body}>
         <View style={dateStyles.dateTypeContainer}>
-          <DateTypeButton
+          <MomentTypeButton
             type="specific"
+            active={!isRange}
             label="Specific Date"
-            dispatchDate={dispatch}
-            active={!dateState.isRange}
           />
-          <DateTypeButton
-            type="range"
-            label="Range"
-            dispatchDate={dispatch}
-            active={dateState.isRange}
-          />
+          <MomentTypeButton type="range" label="Range" active={isRange} />
         </View>
         <Dates
-          date={dateState.date}
-          startDate={dateState.startDate}
-          endDate={dateState.endDate}
-          focusedInput={dateState.focus}
-          range={dateState.isRange}
+          date={_moment}
+          range={isRange}
+          endDate={endMoment}
+          focusedInput={focus}
+          startDate={startMoment}
           onDatesChange={onDateChange}
           isDateBlocked={isDateBlocked}
         />
