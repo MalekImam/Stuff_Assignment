@@ -1,6 +1,9 @@
+// Dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
+// Shared Components
+import homeStyles from 'modules/Home/styles';
 
 function Home({navigation}) {
   // Remove navigation header from the screen
@@ -9,7 +12,7 @@ function Home({navigation}) {
   }, [navigation]);
 
   return (
-    <View>
+    <View style={homeStyles.container}>
       <Text>Home Page</Text>
     </View>
   );
