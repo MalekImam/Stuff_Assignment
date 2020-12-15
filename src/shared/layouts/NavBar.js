@@ -17,7 +17,9 @@ function NavBar({backBtn, rightBtns, leftBtns, title}) {
       {/* Left Area */}
       <View style={navBarStyles.left}>
         {leftBtns.length > 0
-          ? leftBtns.map((btn) => <IconButton icon={btn.icon} {...btn.props} />)
+          ? leftBtns.map((btn, i) => (
+              <IconButton key={i} icon={btn.icon} {...btn.props} />
+            ))
           : backBtn
           ? BackBtn
           : null}
@@ -28,8 +30,8 @@ function NavBar({backBtn, rightBtns, leftBtns, title}) {
       </View>
       {/* Right Area */}
       <View style={navBarStyles.right}>
-        {rightBtns.map((btn) => (
-          <IconButton icon={btn.icon} {...btn.props} />
+        {rightBtns.map((btn, i) => (
+          <IconButton key={i} icon={btn.icon} {...btn.props} />
         ))}
       </View>
     </View>

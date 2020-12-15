@@ -7,6 +7,14 @@ import NavBar from 'shared/layouts/NavBar';
 import homeStyles from 'modules/Home/styles';
 
 function Home({navigation}) {
+  const LogOutBtn = {
+    icon: 'power',
+    props: {
+      onPress: () => console.log('Loggggg Outttttt'),
+    },
+  };
+  const rightBtns = [LogOutBtn];
+
   // Remove navigation header from the screen
   React.useLayoutEffect(() => {
     navigation.setOptions({headerShown: false});
@@ -14,7 +22,7 @@ function Home({navigation}) {
 
   return (
     <View style={homeStyles.container}>
-      <NavBar />
+      <NavBar rightBtns={rightBtns} />
       <View style={homeStyles.body}>
         <Text style={homeStyles.bodyText}>
           I'd like to book a meeting with the business development at/on ...
