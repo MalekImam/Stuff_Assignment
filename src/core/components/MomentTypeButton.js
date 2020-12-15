@@ -34,6 +34,7 @@ function MomentTypeButton({label, type, active}) {
 
 MomentTypeButton.propTypes = {
   type: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
 };
 
