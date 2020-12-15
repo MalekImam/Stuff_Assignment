@@ -1,6 +1,6 @@
 import router from 'core/Routes/router';
 import Home from 'modules/Home/components';
-import ReverseGardian from 'core/middlewares/ReverseGardian';
+import Gardian from 'core/middlewares/Gardian';
 
 const requireAuth = false;
-router.add('Home', Home, [ReverseGardian], requireAuth);
+router.add('Home', Home, [Gardian], requireAuth);
