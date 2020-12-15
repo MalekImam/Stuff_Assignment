@@ -42,3 +42,4 @@ Meetings --> Users
 > - Alias links: used to give links an alias for better usage and to be more readable for users, for installation <br/> > `yarn add babel-plugin-module-resolver`
 > - Reinforcements package: used for dealing with objects, also it gives you some methods like **merge, get**, for installation <br/> >`yarn add reinforcements`
 > - Keyboard Aware Scroll View: this package is responsible for creating the scroll view if needed while typing inside text input, for installation <br/> > `yarn add react-native-keyboard-aware-scroll-view`
+> - Date Range Picker: for installation, <br/> > `yarn add react-native-date-ranges-picker`
