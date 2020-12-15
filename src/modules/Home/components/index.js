@@ -5,7 +5,7 @@ import {Text, View} from 'react-native';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import homeStyles from 'modules/Home/styles';
-import StaticButton from 'shared/components/Buttons/StaticButton';
+import BodyButton from 'modules/Home/components/BodyButton';
 
 function Home({navigation}) {
   const LogOutBtn = {
@@ -21,8 +21,6 @@ function Home({navigation}) {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
 
-  const navigateTo = (target) => navigation.navigate(target);
-
   return (
     <View style={homeStyles.container}>
       <NavBar rightBtns={rightBtns} />
@@ -31,18 +29,8 @@ function Home({navigation}) {
           I'd like to book a meeting with the business development at/on ...
         </Text>
         <View style={homeStyles.bodyBtns}>
-          <StaticButton
-            label="Date"
-            onPress={() => navigateTo('Date')}
-            buttonStyle={homeStyles.btnsStyle}
-            _btnContentStyle={homeStyles.btnsContentStyle}
-          />
-          <StaticButton
-            label="Time"
-            onPress={() => navigateTo('Time')}
-            buttonStyle={homeStyles.btnsStyle}
-            _btnContentStyle={homeStyles.btnsContentStyle}
-          />
+          <BodyButton label="Date" />
+          <BodyButton label="Time" />
         </View>
       </View>
     </View>
