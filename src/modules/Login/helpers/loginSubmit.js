@@ -1,4 +1,5 @@
-const onSubmit = () => {
+const onSubmit = (navigation) => {
+  navigation.navigate('Home');
   console.log('On Submit');
 };
 

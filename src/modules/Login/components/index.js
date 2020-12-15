@@ -66,7 +66,10 @@ function Login({navigation}) {
             </View>
             <View style={loginStyles.nextBtn}>
               {loginState.email || loginState.password ? (
-                <ButtonWithIcon label="Next" onPress={() => onSubmit()} />
+                <ButtonWithIcon
+                  label="Next"
+                  onPress={() => onSubmit(navigation)}
+                />
               ) : null}
             </View>
           </View>
