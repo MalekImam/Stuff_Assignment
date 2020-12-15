@@ -53,7 +53,7 @@ NavBar.propTypes = {
 NavBar.defaultProps = {
   leftBtns: [],
   rightBtns: [],
-  backBtn: true,
+  backBtn: false,
 };
 
 export default NavBar;
