@@ -28,7 +28,7 @@ function Login({navigation}) {
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={loginStyles.container}>
         <View style={loginStyles.box}>
-          <View>
+          <View style={loginStyles.avatar}>
             <Avatar
               size={130}
               type="image"
@@ -42,7 +42,7 @@ function Login({navigation}) {
           </View>
           <View style={loginStyles.inputsContainer}>
             <ComponentControl
-              label="Email"
+              label="Email Address"
               control="email"
               value={loginState.email}
               error={!loginState.isValid_email}
@@ -61,6 +61,8 @@ function Login({navigation}) {
                 validateLoginInput('password', dispatch, loginState.password)
               }
             />
+          </View>
+          <View style={loginStyles.nextBtn}>
             <ButtonWithIcon label="Next" onPress={() => onSubmit()} />
           </View>
         </View>
