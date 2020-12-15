@@ -5178,7 +5178,7 @@ moment-range@2.2.0:
   resolved "https://registry.yarnpkg.com/moment-range/-/moment-range-2.2.0.tgz#b02575778a4ac50a65777939f5c5d757f83fcd85"
   integrity sha1-sCV1d4pKxQpld3k59cXXV/g/zYU=
 
-moment@^2.22.1:
+moment@^2.17.1:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -5778,7 +5778,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5847,15 +5847,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-native-date-ranges-picker@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/react-native-date-ranges-picker/-/react-native-date-ranges-picker-2.5.2.tgz#8ba51ac35459850597f0711b24329c135b6be878"
-  integrity sha512-tqZYBLbpMKdva4AsUXXBVAEmRoDhz1akrCSB+vEx+SWVm8vZlFWn7zVzJuZz+Ks1btfpaOa2uyzao71SL+j7VQ==
+react-native-dates@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-dates/-/react-native-dates-2.0.4.tgz#155780ebdede82504ce42c14d5981219d434b181"
+  integrity sha1-FVeA697eglBM5CwU1ZgSGdQ0sYE=
   dependencies:
-    moment "^2.22.1"
+    moment "^2.17.1"
     moment-range "2.2.0"
-    prop-types "^15.6.1"
-    react ">=16.0.0-alpha.12"
 
 react-native-gesture-handler@^1.9.0:
   version "1.9.0"
@@ -5995,14 +5993,6 @@ react@16.13.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-
-react@>=16.0.0-alpha.12:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
-  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 read-pkg-up@^7.0.1:
   version "7.0.1"
