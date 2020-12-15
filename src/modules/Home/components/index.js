@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
 // Shared Components
+import NavBar from 'shared/layouts/NavBar';
 import homeStyles from 'modules/Home/styles';
-import NavBar from '../../../shared/layouts/NavBar';
 
 function Home({navigation}) {
   // Remove navigation header from the screen
