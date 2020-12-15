@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import React, {useReducer, useState} from 'react';
 import {Text, View, TouchableWithoutFeedback} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 // Core Files
 import loginReducer, {
   initialLoginState,
@@ -25,51 +26,53 @@ function Login({navigation}) {
   }, [navigation]);
 
   return (
-    <TouchableWithoutFeedback onPress={dismissKeyboard}>
-      <View style={loginStyles.container}>
-        <View style={loginStyles.box}>
-          <View style={loginStyles.avatar}>
-            <Avatar
-              size={130}
-              type="image"
-              source={require('shared/assets/stuff_logo.png')}
-            />
-          </View>
-          <View style={loginStyles.titleContainer}>
-            <Text style={loginStyles.title}>
-              Your email address and password?
-            </Text>
-          </View>
-          <View style={loginStyles.inputsContainer}>
-            <ComponentControl
-              label="Email Address"
-              control="email"
-              value={loginState.email}
-              error={!loginState.isValid_email}
-              onChangeText={(text) => dispatch(setEmail(text))}
-              onBlur={() =>
-                validateLoginInput('email', dispatch, loginState.email)
-              }
-            />
-            <ComponentControl
-              label="Password"
-              control="password"
-              value={loginState.password}
-              error={!loginState.isValid_password}
-              onChangeText={(text) => dispatch(setPassword(text))}
-              onBlur={() =>
-                validateLoginInput('password', dispatch, loginState.password)
-              }
-            />
-          </View>
-          <View style={loginStyles.nextBtn}>
-            {loginState.email || loginState.password ? (
-              <ButtonWithIcon label="Next" onPress={() => onSubmit()} />
-            ) : null}
+    <KeyboardAwareScrollView style={{flex: 1}}>
+      <TouchableWithoutFeedback onPress={dismissKeyboard}>
+        <View style={loginStyles.container}>
+          <View style={loginStyles.box}>
+            <View style={loginStyles.avatar}>
+              <Avatar
+                size={130}
+                type="image"
+                source={require('shared/assets/stuff_logo.png')}
+              />
+            </View>
+            <View style={loginStyles.titleContainer}>
+              <Text style={loginStyles.title}>
+                Your email address and password?
+              </Text>
+            </View>
+            <View style={loginStyles.inputsContainer}>
+              <ComponentControl
+                label="Email Address"
+                control="email"
+                value={loginState.email}
+                error={!loginState.isValid_email}
+                onChangeText={(text) => dispatch(setEmail(text))}
+                onBlur={() =>
+                  validateLoginInput('email', dispatch, loginState.email)
+                }
+              />
+              <ComponentControl
+                label="Password"
+                control="password"
+                value={loginState.password}
+                error={!loginState.isValid_password}
+                onChangeText={(text) => dispatch(setPassword(text))}
+                onBlur={() =>
+                  validateLoginInput('password', dispatch, loginState.password)
+                }
+              />
+            </View>
+            <View style={loginStyles.nextBtn}>
+              {loginState.email || loginState.password ? (
+                <ButtonWithIcon label="Next" onPress={() => onSubmit()} />
+              ) : null}
+            </View>
           </View>
         </View>
-      </View>
-    </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+    </KeyboardAwareScrollView>
   );
 }
 
