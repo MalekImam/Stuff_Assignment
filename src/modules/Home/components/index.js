@@ -14,7 +14,7 @@ function Home({navigation}) {
 
   return (
     <View style={homeStyles.container}>
-      <NavBar title="Home Page" />
+      <NavBar />
       <View style={homeStyles.body}>
         <Text style={homeStyles.bodyText}>
           I'd like to book a meeting with the business development at/on ...
