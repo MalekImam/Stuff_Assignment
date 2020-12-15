@@ -12,6 +12,7 @@ import configureStore from 'core/redux/store';
 // Import modules routes
 import 'modules/Login/routes';
 import 'modules/Home/routes';
+import 'modules/Date/routes';
 
 const store = configureStore();
 

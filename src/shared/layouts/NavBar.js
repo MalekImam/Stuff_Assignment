@@ -6,8 +6,12 @@ import {useNavigation} from '@react-navigation/native';
 // Paper Ui
 import {Colors, IconButton} from 'react-native-paper';
 
-function NavBar({backBtn, rightBtns, leftBtns, title}) {
+function NavBar({backBtn, rightBtns, leftBtns, navBarTitle}) {
   const navigation = useNavigation();
+
+  const title = navBarTitle ? navBarTitle.name : '';
+  const customTitleStyle = navBarTitle ? navBarTitle.styles : null;
+  const titleStyle = StyleSheet.compose(navBarStyles.title, customTitleStyle);
 
   const goBack = () => navigation.goBack();
   const BackBtn = <IconButton icon="arrow-left" onPress={() => goBack()} />;
@@ -26,7 +30,7 @@ function NavBar({backBtn, rightBtns, leftBtns, title}) {
       </View>
       {/* Middle Area */}
       <View style={navBarStyles.center}>
-        <Text style={navBarStyles.title}>{title || ''}</Text>
+        <Text style={titleStyle}>{title}</Text>
       </View>
       {/* Right Area */}
       <View style={navBarStyles.right}>
@@ -50,6 +54,7 @@ NavBar.propTypes = {
   backBtn: PropTypes.bool,
   leftBtns: PropTypes.array,
   rightBtns: PropTypes.array,
+  navBarTitle: PropTypes.object,
 };
 
 NavBar.defaultProps = {
