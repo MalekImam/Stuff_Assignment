@@ -43,3 +43,4 @@ Meetings --> Users
 > - Reinforcements package: used for dealing with objects, also it gives you some methods like **merge, get**, for installation <br/> >`yarn add reinforcements`
 > - Keyboard Aware Scroll View: this package is responsible for creating the scroll view if needed while typing inside text input, for installation <br/> > `yarn add react-native-keyboard-aware-scroll-view`
 > - React Native Dates: used to deal with date range picker, for installation, <br/> > `yarn add react-native-dates`
+> - Moment: JS date library for parsing, validating, manipulating, and formatting dates, for installation <br /> > `yarn add moment`
