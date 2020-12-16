@@ -7,7 +7,8 @@ const getMomentState = () => {
   const isRange = useSelect('momentReducer.isRange');
   const endMoment = useSelect('momentReducer.endMoment');
   const startMoment = useSelect('momentReducer.startMoment');
-  return {focus, _moment, isRange, endMoment, startMoment, show};
+  const idSelected = useSelect('momentReducer.rangeIdSelected');
+  return {focus, _moment, isRange, endMoment, startMoment, show, idSelected};
 };
 
 export default getMomentState;
