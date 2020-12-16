@@ -43,7 +43,7 @@ function Time({navigation}) {
           <MomentTypeButton
             type="specific"
             active={!isRange}
-            label="Specific Date"
+            label="Specific time"
           />
           <MomentTypeButton type="range" label="Range" active={isRange} />
         </View>
