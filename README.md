@@ -46,3 +46,4 @@ Meetings --> Users
 > - Moment: JS date library for parsing, validating, manipulating, and formatting dates, for installation <br /> > `yarn add moment`
 > - Moment-Timezone: additionally to the moment library, it's support time zone, for installation <br /> > `yarn add moment-timezone`
 > - Date Time Picker: React Native Community for (Date & Time Picker component), for installation <br/> > `yarn add @react-native-community/datetimepicker`
+> - Redux Thunk: used to perform async code when dipatching action creator, it's like a middleware between the reducer and the dispatch function of the redux, for installation <br/> > `yarn add redux-thunk`
