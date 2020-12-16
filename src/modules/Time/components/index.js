@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 import DateTimePicker from '@react-native-community/datetimepicker';
 // Core Files
-import {updateMoment} from 'core/redux/actions/moment';
+import {updateMoment, setIsMomentInRange} from 'core/redux/actions/moment';
 import getMomentState from 'core/redux/helpers/getMomentState';
+import MomentTypeButton from 'core/components/MomentTypeButton';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import timeStyles from 'modules/Time/styles';
@@ -21,6 +22,11 @@ function Time({navigation}) {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
 
+  // Default option is Specific Time
+  React.useEffect(() => {
+    dispatchMoment(setIsMomentInRange(false));
+  }, []);
+
   const onChange = (event, selectedDate) => {
     const currentMoment = selectedDate || _moment;
     dispatchMoment(
@@ -32,6 +38,14 @@ function Time({navigation}) {
     <View style={timeStyles.container}>
       <NavBar backBtn navBarTitle={navBarTitle} />
       <View style={timeStyles.body}>
+        <View style={timeStyles.timeTypeContainer}>
+          <MomentTypeButton
+            type="specific"
+            active={!isRange}
+            label="Specific Date"
+          />
+          <MomentTypeButton type="range" label="Range" active={isRange} />
+        </View>
         {show && (
           <DateTimePicker
             mode="time"
