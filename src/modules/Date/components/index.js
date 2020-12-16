@@ -7,7 +7,11 @@ import Dates from 'react-native-dates';
 import {useDispatch} from 'react-redux';
 // Core Files
 import getMomentState from 'core/redux/helpers/getMomentState';
-import {setMoment, setMoments} from 'core/redux/actions/moment';
+import {
+  setMoment,
+  setMoments,
+  setIsMomentInRange,
+} from 'core/redux/actions/moment';
 import MomentTypeButton from 'core/components/MomentTypeButton';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
@@ -22,6 +26,11 @@ function Date({navigation}) {
   React.useLayoutEffect(() => {
     navigation.setOptions({headerShown: false});
   }, [navigation]);
+
+  // Default option is Specific Time
+  React.useEffect(() => {
+    dispatch(setIsMomentInRange(false));
+  }, []);
 
   const isDateBlocked = (date) => date.isBefore(moment(), 'day');
 
