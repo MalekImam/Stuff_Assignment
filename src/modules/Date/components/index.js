@@ -16,7 +16,7 @@ import dateStyles from 'modules/Date/styles';
 function Date({navigation}) {
   const dispatch = useDispatch();
   const navBarTitle = {name: 'Custom date', styles: {color: 'black'}};
-  const [focus, _moment, isRange, endMoment, startMoment] = getMomentState();
+  const {focus, _moment, isRange, endMoment, startMoment} = getMomentState();
 
   // Remove navigation header from the screen
   React.useLayoutEffect(() => {
