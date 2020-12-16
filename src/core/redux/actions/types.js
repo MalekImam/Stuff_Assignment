@@ -6,4 +6,5 @@ export const LOGOUT = 'LOGOUT';
 export const SET_MOMENT = 'SET_MOMENT';
 export const SET_MOMENTS = 'SET_MOMENTS';
 export const CLEAR_MOMENT = 'CLEAR_MOMENT';
+export const SET_RANGE_ID_SELECTED = 'SET_RANGE_ID_SELECTED';
 export const SET_IS_MOMENT_IN_RANGE = 'SET_IS_MOMENT_IN_RANGE';
