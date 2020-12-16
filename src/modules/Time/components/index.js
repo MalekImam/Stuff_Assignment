@@ -11,6 +11,7 @@ import MomentTypeButton from 'core/components/MomentTypeButton';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import timeStyles from 'modules/Time/styles';
+import SelectedTime from './SelectedTime';
 
 function Time({navigation}) {
   const navBarTitle = {name: 'Custom time', styles: {color: 'black'}};
@@ -45,6 +46,20 @@ function Time({navigation}) {
             label="Specific Date"
           />
           <MomentTypeButton type="range" label="Range" active={isRange} />
+        </View>
+        <View style={timeStyles.timeTypeContainer}>
+          <SelectedTime
+            id="start"
+            active={!isRange}
+            label={JSON.stringify(startMoment)}
+          />
+          {isRange ? (
+            <SelectedTime
+              id="end"
+              active={isRange}
+              label={JSON.stringify(endMoment)}
+            />
+          ) : null}
         </View>
         {show && (
           <DateTimePicker
