@@ -8,11 +8,13 @@ import {updateMoment} from 'core/redux/actions/moment';
 import StaticButton from 'shared/components/Buttons/StaticButton';
 // Paper Ui
 import {Colors} from 'react-native-paper';
+import getParsedTime from '../helpers/parseTime';
 
 function SelectedTime({id, active, label}) {
   const dispatchMoment = useDispatch();
   const notActiveColor = Colors.grey400;
   const activeColor = Colors.lightBlue300;
+  const _label = label ? label : getParsedTime(new Date());
 
   const onTimeSelected = (id) => {
     dispatchMoment(updateMoment({show: true, rangeIdSelected: id}));
@@ -21,7 +23,7 @@ function SelectedTime({id, active, label}) {
   return (
     <StaticButton
       mode="text"
-      label={label}
+      label={_label}
       uppercase={false}
       onPress={() => onTimeSelected(id)}
       color={active ? activeColor : notActiveColor}
@@ -30,9 +32,9 @@ function SelectedTime({id, active, label}) {
 }
 
 SelectedTime.propTypes = {
+  label: PropTypes.string,
   id: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
-  label: PropTypes.string.isRequired,
 };
 
 export default SelectedTime;

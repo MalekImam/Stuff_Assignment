@@ -44,4 +44,5 @@ Meetings --> Users
 > - Keyboard Aware Scroll View: this package is responsible for creating the scroll view if needed while typing inside text input, for installation <br/> > `yarn add react-native-keyboard-aware-scroll-view`
 > - React Native Dates: used to deal with date range picker, for installation, <br/> > `yarn add react-native-dates`
 > - Moment: JS date library for parsing, validating, manipulating, and formatting dates, for installation <br /> > `yarn add moment`
+> - Moment-Timezone: additionally to the moment library, it's support time zone, for installation <br /> > `yarn add moment-timezone`
 > - Date Time Picker: React Native Community for (Date & Time Picker component), for installation <br/> > `yarn add @react-native-community/datetimepicker`

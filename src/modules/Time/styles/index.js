@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 const timeStyles = StyleSheet.create({
   body: {margin: 30},
   container: {flex: 1},
+  dividerTime: {fontSize: 30},
   timeTypeContainer: {
     marginBottom: 30,
     flexDirection: 'row',
