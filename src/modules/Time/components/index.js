@@ -16,8 +16,15 @@ import SelectedTime from './SelectedTime';
 function Time({navigation}) {
   const navBarTitle = {name: 'Custom time', styles: {color: 'black'}};
   const dispatchMoment = useDispatch();
-  const {show, _moment, isRange, endMoment, startMoment} = getMomentState();
-
+  const {
+    show,
+    _moment,
+    isRange,
+    endMoment,
+    idSelected,
+    startMoment,
+  } = getMomentState();
+  const startTimeActive = idSelected === 'start' ? true : false;
   // Remove navigation header from the screen
   React.useLayoutEffect(() => {
     navigation.setOptions({headerShown: false});
@@ -50,13 +57,13 @@ function Time({navigation}) {
         <View style={timeStyles.timeTypeContainer}>
           <SelectedTime
             id="start"
-            active={!isRange}
+            active={startTimeActive}
             label={JSON.stringify(startMoment)}
           />
           {isRange ? (
             <SelectedTime
               id="end"
-              active={isRange}
+              active={!startTimeActive}
               label={JSON.stringify(endMoment)}
             />
           ) : null}

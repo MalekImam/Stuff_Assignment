@@ -14,8 +14,8 @@ function SelectedTime({id, active, label}) {
   const notActiveColor = Colors.grey400;
   const activeColor = Colors.lightBlue300;
 
-  const onTimeSelected = (type) => {
-    dispatchMoment(updateMoment({show: true}));
+  const onTimeSelected = (id) => {
+    dispatchMoment(updateMoment({show: true, rangeIdSelected: id}));
   };
 
   return (
