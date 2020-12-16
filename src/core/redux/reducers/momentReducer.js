@@ -11,6 +11,7 @@ const initialMomentState = {
   endMoment: null,
   startMoment: null,
   focus: 'startDate',
+  show: true, // For time modal
 };
 
 const momentReducer = (state = initialMomentState, action) => {

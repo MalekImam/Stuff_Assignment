@@ -13,6 +13,8 @@ export const setMoments = (startMoment, endMoment, focus) => ({
   data: {startMoment, endMoment, focus},
 });
 
+export const updateMoment = (data) => ({type: SET_MOMENTS, data});
+
 export const setIsMomentInRange = (isRange) => ({
   data: isRange,
   type: SET_IS_MOMENT_IN_RANGE,
