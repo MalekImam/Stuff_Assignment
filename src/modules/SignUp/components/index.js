@@ -18,6 +18,7 @@ import {
 // Shared Components
 import Avatar from 'shared/components/Avatars';
 import signUpStyles from 'modules/SignUp/styles';
+import StaticButton from 'shared/components/Buttons/StaticButton';
 
 function SignUp({navigation}) {
   const [signUpState, dispatch] = useReducer(signUpReducer, initialSignUpState);
@@ -70,7 +71,7 @@ function SignUp({navigation}) {
               <ComponentControl
                 control="password"
                 label="Confirm Password"
-                value={signUpState.password}
+                value={signUpState.c_password}
                 error={!signUpState.isValid_password}
                 onChangeText={(text) => dispatch(setRC_Password(text))}
                 onBlur={() =>
@@ -83,7 +84,7 @@ function SignUp({navigation}) {
               />
             </View>
             <View style={signUpStyles.nextBtn}>
-              <ButtonWithIcon
+              <StaticButton
                 label="Register"
                 onPress={() => console.log('Register')}
                 disabled={
