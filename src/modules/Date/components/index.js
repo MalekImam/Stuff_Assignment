@@ -16,6 +16,8 @@ import MomentTypeButton from 'core/components/MomentTypeButton';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import dateStyles from 'modules/Date/styles';
+import StaticButton from 'shared/components/Buttons/StaticButton';
+import getFormattedDate from 'modules/Date/helpers/getFormattedDate';
 
 function Date({navigation}) {
   const dispatch = useDispatch();
@@ -44,6 +46,22 @@ function Date({navigation}) {
     }
   };
 
+  const [selectedDate, setSelectedDate] = React.useState('');
+
+  React.useEffect(() => {
+    let res = JSON.stringify(getFormattedDate(_moment));
+    if (isRange)
+      res = `${JSON.stringify(getFormattedDate(startMoment))} - ${
+        endMoment !== null ? JSON.stringify(getFormattedDate(endMoment)) : ''
+      }`;
+    setSelectedDate(res);
+  }, [_moment, startMoment, endMoment]);
+
+  const addMeeting = () => {
+    dispatch(insertMeeting(selectedDate));
+  };
+
+  console.log(selectedDate);
   return (
     <View style={dateStyles.container}>
       <NavBar backBtn navBarTitle={navBarTitle} />
@@ -65,6 +83,11 @@ function Date({navigation}) {
           onDatesChange={onDateChange}
           isDateBlocked={isDateBlocked}
         />
+        {selectedDate !== 'null' ? (
+          <View style={{marginTop: 190}}>
+            <StaticButton label={selectedDate} onPress={() => addMeeting()} />
+          </View>
+        ) : null}
       </View>
     </View>
   );
