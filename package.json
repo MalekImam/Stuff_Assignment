@@ -15,6 +15,7 @@
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "babel-plugin-module-resolver": "^4.0.0",
+    "firebase": "^8.2.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "prop-types": "^15.7.2",
