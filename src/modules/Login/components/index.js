@@ -1,9 +1,11 @@
 // Dependencies
 import PropTypes from 'prop-types';
+import {useDispatch} from 'react-redux';
 import React, {useReducer, useState} from 'react';
 import {Text, View, TouchableWithoutFeedback} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 // Core Files
+import useSelect from 'core/hooks/useSelect';
 import loginReducer, {
   initialLoginState,
 } from 'modules/Login/helpers/reducers/loginReducer';
@@ -15,9 +17,12 @@ import {setEmail, setPassword} from 'modules/Login/helpers/actions/login';
 // Shared Components
 import loginStyles from 'modules/Login/styles';
 import Avatar from 'shared/components/Avatars';
+import MessageBox from 'shared/components/MessageBox';
 import ButtonWithIcon from 'shared/components/Buttons/ButtonWithIcon';
 
 function Login({navigation}) {
+  const dispatchAuth = useDispatch();
+  const authError = useSelect('authReducer.authError');
   const [loginState, dispatch] = useReducer(loginReducer, initialLoginState);
 
   // Remove navigation header from the screen
@@ -63,12 +68,16 @@ function Login({navigation}) {
                   validateLoginInput('password', dispatch, loginState.password)
                 }
               />
+              {authError && <MessageBox message={authError} />}
             </View>
             <View style={loginStyles.nextBtn}>
               {loginState.email || loginState.password ? (
                 <ButtonWithIcon
                   label="Next"
-                  onPress={() => onSubmit(navigation)}
+                  onPress={() => onSubmit(loginState, navigation, dispatchAuth)}
+                  disabled={
+                    !loginState.isValid_email || !loginState.isValid_password
+                  }
                 />
               ) : null}
             </View>
