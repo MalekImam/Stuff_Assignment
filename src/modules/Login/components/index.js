@@ -6,10 +6,10 @@ import {Text, View, TouchableWithoutFeedback} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 // Core Files
 import useSelect from 'core/hooks/useSelect';
+import {logUserIn} from 'core/redux/actions/auth';
 import loginReducer, {
   initialLoginState,
 } from 'modules/Login/helpers/reducers/loginReducer';
-import onSubmit from 'modules/Login/helpers/loginSubmit';
 import ComponentControl from 'core/components/ComponentsControl';
 import {dismissKeyboard} from 'core/helpers/KeyboardFunctioalities';
 import {validateLoginInput} from 'modules/Login/helpers/loginValidation';
@@ -74,7 +74,7 @@ function Login({navigation}) {
               {loginState.email || loginState.password ? (
                 <ButtonWithIcon
                   label="Next"
-                  onPress={() => onSubmit(loginState, dispatchAuth)}
+                  onPress={() => dispatchAuth(logUserIn(loginState))}
                   disabled={
                     !loginState.isValid_email || !loginState.isValid_password
                   }
