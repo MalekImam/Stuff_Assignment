@@ -68,6 +68,11 @@ function Login({navigation}) {
                   validateLoginInput('password', dispatch, loginState.password)
                 }
               />
+              <Text
+                style={loginStyles.register}
+                onPress={() => navigation.navigate('SignUp')}>
+                Create New Account?
+              </Text>
               {authError && <MessageBox message={authError} />}
             </View>
             <View style={loginStyles.nextBtn}>

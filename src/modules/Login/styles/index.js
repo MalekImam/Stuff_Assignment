@@ -1,5 +1,6 @@
 // Dependencies
 import {StyleSheet} from 'react-native';
+import {Colors} from 'react-native-paper';
 
 const loginStyles = StyleSheet.create({
   title: {fontSize: 25},
@@ -24,6 +25,7 @@ const loginStyles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
+  register: {color: Colors.lightBlue400, fontSize: 17},
 });
 
 export default loginStyles;
