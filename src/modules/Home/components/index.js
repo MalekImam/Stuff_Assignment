@@ -2,16 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
+import {useDispatch} from 'react-redux';
+// Core Files
+import {logUserOut} from 'core/redux/actions/auth';
 // Shared Components
 import NavBar from 'shared/layouts/NavBar';
 import homeStyles from 'modules/Home/styles';
 import BodyButton from 'modules/Home/components/BodyButton';
 
 function Home({navigation}) {
+  const dispatch = useDispatch();
   const LogOutBtn = {
     icon: 'power',
     props: {
-      onPress: () => console.log('Loggggg Outttttt'),
+      onPress: () => dispatch(logUserOut()),
     },
   };
   const rightBtns = [LogOutBtn];
