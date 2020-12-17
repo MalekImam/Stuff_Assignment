@@ -1,8 +1,11 @@
-import {LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT} from 'core/redux/actions/types';
+import {
+  LOGIN_ERROR,
+  LOGOUT_ERROR,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+} from 'core/redux/actions/types';
 
-const initialState = {
-  authError: null,
-};
+const initialState = {authError: null};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,8 +15,12 @@ const userReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       console.log('Login success');
       return {...state, authError: null};
-    case LOGOUT:
-      return {...state, user: null, userToken: null};
+    case LOGOUT_ERROR:
+      console.log('Logout failed');
+      return state;
+    case LOGOUT_SUCCESS:
+      console.log('Logout success');
+      return state;
     default:
       return state;
   }

@@ -1,6 +1,22 @@
-import {LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT} from 'core/redux/actions/types';
+import {
+  LOGIN_ERROR,
+  LOGOUT_ERROR,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+} from 'core/redux/actions/types';
 
-export const logUserOut = () => ({type: LOGOUT});
+export const logUserOut = () => {
+  return (dispatch, getState, {getFirebase}) => {
+    const firebase = getFirebase();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch({type: LOGOUT_SUCCESS});
+      })
+      .catch((err) => dispatch({type: LOGOUT_ERROR, err}));
+  };
+};
 
 export const logUserIn = (userData) => {
   return (dispatch, getState, {getFirebase}) => {

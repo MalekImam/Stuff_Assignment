@@ -13,13 +13,13 @@ enableScreens();
 const Stack = createStackNavigator();
 
 const App = () => {
-  const user = useSelect('userReducer.user');
+  const auth = useSelect('firebaseReducer.auth.uid');
 
   return (
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          {user
+          {auth
             ? authRoutesList.map((route, index) => {
                 return (
                   <Stack.Screen
