@@ -25,3 +25,17 @@ export const setIsMomentInRange = (isRange) => ({
   data: isRange,
   type: SET_IS_MOMENT_IN_RANGE,
 });
+
+export const insertMoment = (moment) => {
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+
+    firestore.collection('meetings');
+    add({
+      user_id: 'user', // User Id
+      meeting: moment,
+    }).then(() => {
+      dispatch({type: SIGN_UP_SUCCESS});
+    });
+  };
+};
