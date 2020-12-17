@@ -74,7 +74,7 @@ function Login({navigation}) {
               {loginState.email || loginState.password ? (
                 <ButtonWithIcon
                   label="Next"
-                  onPress={() => onSubmit(loginState, navigation, dispatchAuth)}
+                  onPress={() => onSubmit(loginState, dispatchAuth)}
                   disabled={
                     !loginState.isValid_email || !loginState.isValid_password
                   }
