@@ -48,4 +48,4 @@ Meetings --> Users
 > - Date Time Picker: React Native Community for (Date & Time Picker component), for installation <br/> > `yarn add @react-native-community/datetimepicker`
 > - Redux Thunk: used to perform async code when dipatching action creator, it's like a middleware between the reducer and the dispatch function of the redux, for installation <br/> > `yarn add redux-thunk`
 > - Firebase: `yarn add firebase`
-> - Redux Firestore & React Redux Firebase: these packages are designed specifically for redux and firebase in order to work together in a easy and good way, foe installation <br/> > `yarn add redux-firestore react-redux-firebase`
+> - Redux Firestore & React Redux Firebase: these packages are designed specifically for redux and firebase in order to work together in a easy and good way, foe installation <br/> > `yarn add redux-firestore@0.5.7 react-redux-firebase@2.2.4`
